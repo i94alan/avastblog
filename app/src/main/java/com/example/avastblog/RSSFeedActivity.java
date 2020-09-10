@@ -88,7 +88,8 @@ public class RSSFeedActivity extends ListActivity {
             // list of rss items
             rssItems = rssParser.getRSSFeedItems(rss_url);
             //limit to latest 5 blogs
-            rssItems = rssItems.subList(0,RSS_COUNT);
+            if(rssItems.size() > 0)
+                rssItems = rssItems.subList(0,RSS_COUNT);
             // looping through each item
             for (final RSSItem item : rssItems) {
                 // creating new HashMap
